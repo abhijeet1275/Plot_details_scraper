@@ -2,7 +2,7 @@ import requests
 import json
 import time
 from bs4 import BeautifulSoup
-
+from runner import extract_village_data
 api_url = "https://app1bhunakshaodisha.nic.in/bhunaksha/ScalarDatahandler"
 base_params = {"OP": "5", "state": "21"}
 
@@ -66,10 +66,17 @@ def find_villages(district_no, tehsil_no, RI_no):
     print(villages)
     return villages
 
-districts = find_districts()
+# districts = find_districts()
 
-for district in districts:
-    for tehsil in find_tehsils(district):
-        for RI in find_RI(district, tehsil):
-            find_villages(district, tehsil, RI)
-            
+# for district in districts:
+#     for tehsil in find_tehsils(district):
+#         for ri in find_RI(district, tehsil):
+#             find_villages(district, tehsil, ri)
+#for district no 1, tehsil no 1, RI no 2, extract the village nos
+villages = find_villages(1,1,2)
+print(villages)
+#call the runner.py file for these village nos
+for village in villages:
+    data = extract_village_data(village)
+    # print(data)
+    time.sleep(2)

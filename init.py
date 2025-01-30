@@ -10,16 +10,8 @@ def initialize_scraper():
     Creates new state file and village data directory.
     """
     # Create fresh output directory
-    if os.path.exists(OUTPUT_DIR):
+    if not os.path.exists(OUTPUT_DIR):
         # Remove old village data files
-        for file in os.listdir(OUTPUT_DIR):
-            file_path = os.path.join(OUTPUT_DIR, file)
-            try:
-                if os.path.isfile(file_path):
-                    os.unlink(file_path)
-            except Exception as e:
-                print(f"Error deleting {file_path}: {e}")
-    else:
         os.makedirs(OUTPUT_DIR)
 
     # Create fresh state file

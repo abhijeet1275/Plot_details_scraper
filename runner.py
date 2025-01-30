@@ -43,13 +43,3 @@ def extract_village_data(village_number, fresh_start=True):
     except Exception as e:
         logging.error(f"Error while scraping village {village_number}: {e}")
         return None
-
-if __name__ == "__main__":
-    # Example usage
-    village_no = "38"  # Replace with your village number
-    result = extract_village_data(village_no, fresh_start=True)
-    if result:
-        print(f"Successfully extracted data for village {village_no}")
-        print(f"Number of plots found: {len(result)}")
-    else:
-        print(f"Failed to extract data for village {village_no}")
