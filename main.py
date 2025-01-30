@@ -73,10 +73,10 @@ def find_villages(district_no, tehsil_no, RI_no):
 #         for ri in find_RI(district, tehsil):
 #             find_villages(district, tehsil, ri)
 #for district no 1, tehsil no 1, RI no 2, extract the village nos
-villages = find_villages(1,1,2)
-print(villages)
-#call the runner.py file for these village nos
-for village in villages:
-    data = extract_village_data(village)
-    # print(data)
-    time.sleep(2)
+# villages = find_villages(1,1,2)
+# print(villages)
+# #call the runner.py file for these village nos
+# for village in villages:
+#     data = extract_village_data(village)
+#     # print(data)
+#     time.sleep(2)
